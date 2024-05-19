@@ -11,6 +11,19 @@ puts "----------"
 
 # Your code goes here ...
 
+puts "Please enter a new name for your store!"
+@store_name = gets.chomp
+
+@new_store = Store.new(name: "#{@store_name}" )
+
+if @new_store.save
+  puts "Store saved sucessfully!"
+else
+  puts "Error: Could not save the store."
+  @new_store.errors.full_messages.each do |message|
+    puts message
+  end
+end
 
 =begin
 
